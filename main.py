@@ -5,8 +5,9 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-model = tf.keras.models.load_model('model/sky_classification.h5')
+model = tf.keras.models.load_model("model/sky_classification.h5")
 app = FastAPI()
+
 
 def preprocess_image(image):
     image = image.resize((300, 300))
@@ -16,9 +17,11 @@ def preprocess_image(image):
 
     return image_array
 
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
@@ -26,7 +29,7 @@ async def predict(file: UploadFile = File(...)):
     image = Image.open(io.BytesIO(contents))
     resized_image = preprocess_image(image)
     predictions = model.predict(resized_image)
-    
+
     if predictions > 0.5:
         return {"It is a night"}
     else:
