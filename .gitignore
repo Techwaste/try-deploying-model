@@ -1,6 +1,7 @@
 # addition - custom
 .vscode
 model/
+*.h5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
