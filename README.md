@@ -6,6 +6,7 @@ Contains:
 
 - hello world, located at [hello_world.py](hello_world.py)
 - restful api, located at [restful_api.py](restful_api.py)
+- you can get the machine learning model at [model](https://drive.google.com/drive/folders/1DJUMwuUh7mPa8BB7uNk6xWjsL1i_qS3I?usp=share_link)
 
 ## How to run
 
