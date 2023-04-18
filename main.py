@@ -1,11 +1,13 @@
 from fastapi import FastAPI, File, UploadFile
+import uvicorn
 
 import io
+import os
 from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-model = tf.keras.models.load_model("model/sky_classification.h5")
+model = tf.keras.models.load_model("model.h5")
 app = FastAPI()
 
 
@@ -34,3 +36,7 @@ async def predict(file: UploadFile = File(...)):
         return {"It is a night"}
     else:
         return {"It is a day"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000, timeout_keep_alive=1200)

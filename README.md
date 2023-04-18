@@ -5,7 +5,7 @@ Experimenting with deployments on the model
 Contains:
 
 - hello world, located at [hello_world.py](hello_world.py)
-- restful api, located at [restful_api.py](restful_api.py)
+- restful api, located at [restful_api.py](restful_api.py), source from [chuck's](https://github.com/chuck1z) [**repository**](https://github.com/chuck1z/deploy-model)
 - main (predict model api), located at [main.py](main.py)
 
 ## How to run
@@ -71,7 +71,11 @@ Then you can open the browser and receive an output:
 
 ### 3. To run the [main.py](main.py) sky classification model
 
-To access the model, go to this [link](https://drive.google.com/file/d/1U5B9TSl6RXTBzL6mXsMwE2sbpeMMVnZI/view?usp=sharing), note that you should put your model under the `model/sky_classification.h5` path
+#### Note that you need to have model.h5 to run this api
+
+You can get it through this [link](https://drive.google.com/file/d/1U5B9TSl6RXTBzL6mXsMwE2sbpeMMVnZI/view?usp=sharing) or run the [download.py](download.py) file
+
+Note that you should name your model with `model.h5` or simply change the model path in the script
 
 ```bash
 uvicorn main:app --reload
@@ -82,22 +86,37 @@ You will obtain an output similar to this in the console:
 ```text
 INFO:     Will watch for changes in these directories: ['E:\\Projects\\try-deploying-model']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [5428] using WatchFiles
-2023-04-18 13:40:53.408262: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
-2023-04-18 13:40:53.658282: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
-2023-04-18 13:40:53.701145: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
-2023-04-18 13:40:54.383965: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
-2023-04-18 13:40:54.418867: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
-Model loaded
-INFO:     Started server process [8428]
+INFO:     Started reloader process [10712] using StatReload
+2023-04-19 03:25:13.691430: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 03:25:14.177428: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 03:25:14.230110: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 03:25:15.825289: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 03:25:15.865302: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+INFO:     Started server process [20704]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+```
+
+or you can run the code by running `py main.py` in the terminal and you will receive an output similar to this:
+
+```text
+2023-04-19 02:58:57.877659: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:58.345451: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:58.397330: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:59.431456: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:59.467924: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+INFO:     Started server process [16784]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ```
 
 Then you can open the url in the browser and receive an output:
 
 ```json
-"go to /docs to try the api"
+{
+  "Hello": "World"
+}
 ```
 
 To try the API, simply follow these steps:
