@@ -94,10 +94,26 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
+or you can run the code by running `py main.py` in the terminal and you will receive an output similar to this:
+
+```text
+2023-04-19 02:58:57.877659: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:58.345451: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:58.397330: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:59.431456: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+2023-04-19 02:58:59.467924: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 160563200 exceeds 10% of free system memory.
+INFO:     Started server process [16784]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+```
+
 Then you can open the url in the browser and receive an output:
 
 ```json
-"go to /docs to try the api"
+{
+  "Hello": "World"
+}
 ```
 
 To try the API, simply follow these steps:

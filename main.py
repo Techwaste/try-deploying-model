@@ -39,5 +39,6 @@ async def predict(file: UploadFile = File(...)):
     else:
         return {"It is a day"}
 
-if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0", port=port, timeout_keep_alive=1200)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000, timeout_keep_alive=1200)
