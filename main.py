@@ -2,7 +2,6 @@ from fastapi import FastAPI, File, UploadFile
 import uvicorn
 
 import io
-import os
 from PIL import Image
 import numpy as np
 import tensorflow as tf
