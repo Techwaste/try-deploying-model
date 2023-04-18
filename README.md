@@ -5,7 +5,7 @@ Experimenting with deployments on the model
 Contains:
 
 - hello world, located at [hello_world.py](hello_world.py)
-- restful api, located at [restful_api.py](restful_api.py)
+- restful api, located at [restful_api.py](restful_api.py), source from [chuck's](https://github.com/chuck1z) [**repository**](https://github.com/chuck1z/deploy-model)
 - main (predict model api), located at [main.py](main.py)
 
 ## How to run
