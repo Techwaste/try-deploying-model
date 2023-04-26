@@ -26,6 +26,9 @@ def read_root():
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
+    extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png")
+    if not extension:
+        return "Image must be jpg or png format!"
     contents = await file.read()
     image = Image.open(io.BytesIO(contents))
     resized_image = preprocess_image(image)
